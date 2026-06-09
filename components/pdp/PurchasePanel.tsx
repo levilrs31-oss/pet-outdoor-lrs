@@ -3,7 +3,6 @@
 
 import { useState } from "react";
 import ColorSwatch from "@/components/ui/ColorSwatch";
-import Button from "@/components/ui/Button";
 import type { Product } from "@/lib/data";
 
 export default function PurchasePanel({ product }: { product: Product }) {
