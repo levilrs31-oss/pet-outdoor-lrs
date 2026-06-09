@@ -19,7 +19,7 @@ export default function ImageGallery({ images, name }: { images: string[]; name:
               active === i ? "border-brand" : "border-transparent hover:border-surface"
             }`}
           >
-            <Image src={src} alt={`${name} view ${i + 1}`} fill className="object-cover" />
+            <Image src={src} alt={`${name} view ${i + 1}`} fill className="object-cover" sizes="80px" />
           </button>
         ))}
       </div>
@@ -32,6 +32,7 @@ export default function ImageGallery({ images, name }: { images: string[]; name:
           alt={name}
           fill
           className="object-cover transition-opacity duration-[300ms]"
+          sizes="(max-width: 768px) 100vw, 50vw"
           priority
         />
       </div>

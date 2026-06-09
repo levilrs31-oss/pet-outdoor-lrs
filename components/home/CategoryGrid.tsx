@@ -26,6 +26,7 @@ export default function CategoryGrid() {
                 alt={cat.name}
                 fill
                 className="object-cover transition-transform duration-[250ms] ease-out group-hover:scale-[1.03]"
+                sizes="(max-width: 768px) 50vw, 25vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-[250ms] ease-out">

@@ -32,6 +32,7 @@ export default function ProductSpotlight() {
             alt="Rotary buckle dial close-up on Wanderpaw dog boot"
             fill
             className="object-cover"
+            sizes="(max-width: 768px) 100vw, 60vw"
           />
         </div>
 

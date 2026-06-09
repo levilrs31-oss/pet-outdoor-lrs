@@ -18,6 +18,7 @@ export default function ShopPage() {
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent" />
           <div className="relative z-10 px-8 md:px-16 pb-10">

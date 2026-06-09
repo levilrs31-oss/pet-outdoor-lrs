@@ -24,7 +24,7 @@ export default function BrandStatement() {
         <div className="mt-14 max-w-6xl mx-auto px-6 grid grid-cols-3 gap-4">
           {scenes.map((s) => (
             <div key={s.src} className="relative aspect-[3/2] rounded-lg overflow-hidden">
-              <Image src={s.src} alt={s.alt} fill className="object-cover" />
+              <Image src={s.src} alt={s.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
             </div>
           ))}
         </div>

@@ -11,6 +11,7 @@ export default function HeroSection() {
         alt="Dog wearing Wanderpaw boots walking through a sunlit city park"
         fill
         className="object-cover"
+        sizes="100vw"
         priority
       />
       {/* Gradient overlay */}

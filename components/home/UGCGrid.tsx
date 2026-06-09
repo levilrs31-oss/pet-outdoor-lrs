@@ -41,6 +41,7 @@ export default function UGCGrid() {
                 alt={photo.alt}
                 fill
                 className="object-cover transition-transform duration-[250ms] ease-out group-hover:scale-[1.04]"
+                sizes="(max-width: 768px) 33vw, 300px"
               />
               <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/20 transition-colors duration-[250ms]" />
             </div>

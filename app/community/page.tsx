@@ -46,7 +46,7 @@ export default function CommunityPage() {
           <div className="absolute inset-0 grid grid-cols-3 opacity-40">
             {ugcPhotos.slice(0, 6).map((p, i) => (
               <div key={i} className="relative">
-                <Image src={p.src} alt={p.alt} fill className="object-cover" />
+                <Image src={p.src} alt={p.alt} fill className="object-cover" sizes="33vw" />
               </div>
             ))}
           </div>

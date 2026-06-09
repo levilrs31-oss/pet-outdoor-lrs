@@ -27,6 +27,7 @@ export default function ProductCard({ product }: { product: Product }) {
           alt={product.name}
           fill
           className="object-cover transition-opacity duration-[300ms]"
+          sizes="(max-width: 768px) 50vw, 33vw"
         />
         {product.badge && (
           <span className="absolute top-3 left-3 font-sans text-[10px] tracking-[0.15em] uppercase font-medium bg-dark text-white px-2.5 py-1 rounded-sm">

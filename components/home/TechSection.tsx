@@ -21,6 +21,7 @@ export default function TechSection() {
               alt="Annotated diagram of Wanderpaw Rotary Buckle Boot"
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </SectionEntrance>

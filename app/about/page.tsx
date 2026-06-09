@@ -39,6 +39,7 @@ export default function AboutPage() {
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent" />
           <div className="relative z-10 px-8 md:px-16 pb-16 max-w-2xl">
@@ -77,7 +78,7 @@ export default function AboutPage() {
                   }`}
                 >
                   <div className="relative aspect-[3/2] rounded-lg overflow-hidden">
-                    <Image src={v.img} alt={v.title} fill className="object-cover" />
+                    <Image src={v.img} alt={v.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                   </div>
                   <div>
                     <h3 className="font-serif text-3xl font-light text-text mb-4">{v.title}</h3>
