@@ -4,9 +4,9 @@ import Image from "next/image";
 import SectionEntrance from "@/components/ui/SectionEntrance";
 
 const scenes = [
-  { src: "https://picsum.photos/seed/scene-park/600/400", alt: "Dog in city park" },
-  { src: "https://picsum.photos/seed/scene-beach/600/400", alt: "Dog on beach" },
-  { src: "https://picsum.photos/seed/scene-cafe/600/400", alt: "Dog outside café" },
+  { src: "https://images.unsplash.com/photo-1530700131180-d43d9b8cc41f?auto=format&fit=crop&w=600&h=400&q=80", alt: "Dog in city park" },
+  { src: "https://images.unsplash.com/photo-1596432353865-033bbd1a9fa7?auto=format&fit=crop&w=600&h=400&q=80", alt: "Dog on beach" },
+  { src: "https://images.unsplash.com/photo-1762652847087-bf6db928a70a?auto=format&fit=crop&w=600&h=400&q=80", alt: "Dog outside café" },
 ];
 
 export default function BrandStatement() {

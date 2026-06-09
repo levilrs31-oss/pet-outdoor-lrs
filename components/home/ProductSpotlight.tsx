@@ -28,7 +28,7 @@ export default function ProductSpotlight() {
         {/* Image — 60% */}
         <div className="md:col-span-3 relative aspect-[4/5] rounded-lg overflow-hidden">
           <Image
-            src="https://picsum.photos/seed/boots-close/800/1000"
+            src="https://images.unsplash.com/photo-1769025939291-0603d7b76bb5?auto=format&fit=crop&w=800&h=1000&q=80"
             alt="Rotary buckle dial close-up on Wanderpaw dog boot"
             fill
             className="object-cover"

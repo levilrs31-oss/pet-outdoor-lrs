@@ -4,10 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionEntrance from "@/components/ui/SectionEntrance";
 
-const ugcPhotos = Array.from({ length: 9 }, (_, i) => ({
-  src: `https://picsum.photos/seed/ugc-${i + 1}/400/400`,
-  alt: `Community dog photo ${i + 1}`,
-}));
+const ugcPhotos = [
+  { src: "https://images.unsplash.com/photo-1530700131180-d43d9b8cc41f?auto=format&fit=crop&w=400&h=400&q=80", alt: "Golden retriever on city walk" },
+  { src: "https://images.unsplash.com/photo-1659639237692-2442096a1f04?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog on forest path" },
+  { src: "https://images.unsplash.com/photo-1596432353865-033bbd1a9fa7?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog on beach" },
+  { src: "https://images.unsplash.com/photo-1762652847087-bf6db928a70a?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog at café" },
+  { src: "https://images.unsplash.com/photo-1772650295895-821ca9cc8bf0?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog with harness on trail" },
+  { src: "https://images.unsplash.com/photo-1763569586557-a01fe694b37d?auto=format&fit=crop&w=400&h=400&q=80", alt: "Golden retriever on forest path" },
+  { src: "https://images.unsplash.com/photo-1650860348894-df6aa1936076?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog running through water" },
+  { src: "https://images.unsplash.com/photo-1616961368535-1da6bfb14828?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog on beach at sunset" },
+  { src: "https://images.unsplash.com/photo-1539981979235-86d7f364f6eb?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dogs playing on beach" },
+];
 
 export default function UGCGrid() {
   return (

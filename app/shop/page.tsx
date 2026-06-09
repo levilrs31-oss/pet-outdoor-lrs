@@ -13,7 +13,7 @@ export default function ShopPage() {
         {/* Category banner */}
         <div className="relative h-[35vh] min-h-[240px] flex items-end">
           <Image
-            src="https://picsum.photos/seed/shop-banner/1600/600"
+            src="https://images.unsplash.com/photo-1569992274375-e56b14e234f1?auto=format&fit=crop&w=1600&h=600&q=80"
             alt="Dog wearing Wanderpaw gear outdoors"
             fill
             className="object-cover"

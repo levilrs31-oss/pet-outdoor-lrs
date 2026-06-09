@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-end">
       <Image
-        src="https://picsum.photos/seed/hero-wanderpaw/1600/900"
+        src="https://images.unsplash.com/photo-1618946019619-9d7b7d86b48f?auto=format&fit=crop&w=1600&h=900&q=80"
         alt="Dog wearing Wanderpaw boots walking through a sunlit city park"
         fill
         className="object-cover"

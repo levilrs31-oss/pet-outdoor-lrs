@@ -5,9 +5,33 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SectionEntrance from "@/components/ui/SectionEntrance";
 
-const ugcPhotos = Array.from({ length: 18 }, (_, i) => ({
-  src: `https://picsum.photos/seed/community-${i + 1}/${300 + (i % 3) * 100}/${300 + (i % 2) * 150}`,
-  alt: `Community member's dog in Wanderpaw gear`,
+const ugcHeights = [300, 400, 350, 450, 300, 380, 420, 300, 350, 400, 320, 460, 300, 380, 350, 420, 300, 400];
+
+const ugcSrcs = [
+  "photo-1618946019619-9d7b7d86b48f",
+  "photo-1530700131180-d43d9b8cc41f",
+  "photo-1596432353865-033bbd1a9fa7",
+  "photo-1659639237692-2442096a1f04",
+  "photo-1569992274375-e56b14e234f1",
+  "photo-1614077595151-abeb2550c49c",
+  "photo-1762652847087-bf6db928a70a",
+  "photo-1772650295895-821ca9cc8bf0",
+  "photo-1763569586557-a01fe694b37d",
+  "photo-1612104925465-050a39e553f2",
+  "photo-1650860348894-df6aa1936076",
+  "photo-1616961368535-1da6bfb14828",
+  "photo-1539981979235-86d7f364f6eb",
+  "photo-1763569673263-cbce1f0598f2",
+  "photo-1769417787675-30bc4593a8fe",
+  "photo-1599398227062-e83d9e23d413",
+  "photo-1682532339427-7804e24b88f1",
+  "photo-1680795082050-28f6495af899",
+];
+
+const ugcPhotos = ugcSrcs.map((id, i) => ({
+  src: `https://images.unsplash.com/${id}?auto=format&fit=crop&w=400&h=${ugcHeights[i]}&q=80`,
+  alt: "Community member's dog in Wanderpaw gear",
+  height: ugcHeights[i],
 }));
 
 const regions = ["All", "US", "UK", "Europe"];
@@ -62,7 +86,7 @@ export default function CommunityPage() {
                     src={photo.src}
                     alt={photo.alt}
                     width={400}
-                    height={300 + (i % 3) * 100}
+                    height={photo.height}
                     className="w-full object-cover transition-transform duration-[250ms] ease-out group-hover:scale-[1.02]"
                   />
                   <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/10 transition-colors duration-[250ms]" />

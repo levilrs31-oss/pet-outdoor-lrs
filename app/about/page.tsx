@@ -10,17 +10,17 @@ const values = [
   {
     title: "Adventure",
     desc: "We believe the best moments happen outside. Every product is built to go where you and your dog go — from city blocks to mountain trails.",
-    img: "https://picsum.photos/seed/value-adventure/600/400",
+    img: "https://images.unsplash.com/photo-1763569673263-cbce1f0598f2?auto=format&fit=crop&w=600&h=400&q=80",
   },
   {
     title: "Design",
     desc: "Gear that looks as good as it performs. We obsess over materials, proportions, and color — because your dog deserves to look incredible.",
-    img: "https://picsum.photos/seed/value-design/600/400",
+    img: "https://images.unsplash.com/photo-1769025939291-0603d7b76bb5?auto=format&fit=crop&w=600&h=400&q=80",
   },
   {
     title: "Community",
     desc: "Walking your dog is inherently social. We're building a community of dog owners who share the same love of beautiful gear and good walks.",
-    img: "https://picsum.photos/seed/value-community/600/400",
+    img: "https://images.unsplash.com/photo-1539981979235-86d7f364f6eb?auto=format&fit=crop&w=600&h=400&q=80",
   },
 ];
 
@@ -34,7 +34,7 @@ export default function AboutPage() {
         {/* Hero */}
         <section className="relative h-[50vh] min-h-[320px] flex items-end">
           <Image
-            src="https://picsum.photos/seed/about-hero/1600/900"
+            src="https://images.unsplash.com/photo-1659639237692-2442096a1f04?auto=format&fit=crop&w=1600&h=900&q=80"
             alt="Wanderpaw founders with their dogs"
             fill
             className="object-cover"

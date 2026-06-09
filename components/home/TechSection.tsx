@@ -17,7 +17,7 @@ export default function TechSection() {
         <SectionEntrance>
           <div className="relative aspect-square rounded-lg overflow-hidden">
             <Image
-              src="https://picsum.photos/seed/tech-boot/700/700"
+              src="https://images.unsplash.com/photo-1542991520-73c3fd8344cd?auto=format&fit=crop&w=700&h=700&q=80"
               alt="Annotated diagram of Wanderpaw Rotary Buckle Boot"
               fill
               className="object-cover"
