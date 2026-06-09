@@ -1,5 +1,7 @@
 /* components/ui/Button.tsx */
 
+import Link from "next/link";
+
 interface ButtonProps {
   variant?: "solid" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
@@ -43,9 +45,9 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} className={classes}>
+      <Link href={href} className={classes}>
         {children}
-      </a>
+      </Link>
     );
   }
 
