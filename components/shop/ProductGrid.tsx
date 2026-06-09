@@ -20,6 +20,13 @@ export default function ProductGrid() {
       prev.includes(f) ? prev.filter((x) => x !== f) : [...prev, f]
     );
 
+  const filteredProducts = products.filter((p) => {
+    if (selectedSizes.length > 0 && !p.sizes.some((s) => selectedSizes.includes(s))) {
+      return false;
+    }
+    return true;
+  });
+
   return (
     <div className="flex gap-10">
       <FilterSidebar
@@ -29,7 +36,7 @@ export default function ProductGrid() {
         onFeatureToggle={toggleFeature}
       />
       <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-6">
-        {products.map((p) => (
+        {filteredProducts.map((p) => (
           <ProductCard key={p.id} product={p} />
         ))}
       </div>
