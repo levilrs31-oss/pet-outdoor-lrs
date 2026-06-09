@@ -7,6 +7,9 @@ import ProductSpotlight from "@/components/home/ProductSpotlight";
 import BrandStatement from "@/components/home/BrandStatement";
 import CategoryGrid from "@/components/home/CategoryGrid";
 import TechSection from "@/components/home/TechSection";
+import UGCGrid from "@/components/home/UGCGrid";
+import BrandPromise from "@/components/home/BrandPromise";
+import EmailSignup from "@/components/home/EmailSignup";
 
 export default function Home() {
   return (
@@ -18,6 +21,9 @@ export default function Home() {
         <BrandStatement />
         <CategoryGrid />
         <TechSection />
+        <UGCGrid />
+        <BrandPromise />
+        <EmailSignup />
       </main>
       <Footer />
     </>
