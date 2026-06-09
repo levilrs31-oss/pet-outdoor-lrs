@@ -36,7 +36,7 @@ export default function Button({
     outline:
       "border border-white text-white hover:bg-action hover:border-action hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(193,127,74,0.25)] active:translate-y-px",
     ghost:
-      "text-brand underline underline-offset-4 hover:text-action decoration-transparent hover:decoration-action transition-all",
+      "text-brand underline underline-offset-4 hover:text-action decoration-transparent hover:decoration-action hover:-translate-y-0.5 active:translate-y-px transition-all",
   };
 
   const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
