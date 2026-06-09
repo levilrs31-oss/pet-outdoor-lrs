@@ -63,9 +63,12 @@ export default function FilterSidebar({
       <FilterGroup title="Features">
         <div className="flex flex-col gap-2.5">
           {features.map((f) => (
-            <label key={f} className="flex items-center gap-3 cursor-pointer group">
+            <label
+              key={f}
+              onClick={() => onFeatureToggle(f)}
+              className="flex items-center gap-3 cursor-pointer group"
+            >
               <span
-                onClick={() => onFeatureToggle(f)}
                 className={`w-4 h-4 rounded-sm border shrink-0 flex items-center justify-center transition-colors duration-[150ms] ${
                   selectedFeatures.includes(f)
                     ? "bg-brand border-brand"
