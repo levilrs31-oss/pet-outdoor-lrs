@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import AnnouncementBar from "./AnnouncementBar";
 import Navbar from "./Navbar";
+import CartDrawer from "./CartDrawer";
 
 export default function LayoutShell() {
   const [barVisible, setBarVisible] = useState(true);
@@ -30,6 +31,7 @@ export default function LayoutShell() {
     <>
       <AnnouncementBar visible={barVisible} onClose={handleClose} />
       <Navbar barVisible={barVisible} />
+      <CartDrawer />
     </>
   );
 }
