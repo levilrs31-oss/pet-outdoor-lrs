@@ -8,7 +8,11 @@ import FilterSidebar from "./FilterSidebar";
 
 type SortOption = "default" | "price-asc" | "price-desc" | "name-asc";
 
-export default function ProductGrid() {
+interface ProductGridProps {
+  category?: string;
+}
+
+export default function ProductGrid({ category }: ProductGridProps) {
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<SortOption>("default");
@@ -23,7 +27,9 @@ export default function ProductGrid() {
       prev.includes(f) ? prev.filter((x) => x !== f) : [...prev, f]
     );
 
-  const filtered = products.filter((p) => {
+  const base = category ? products.filter((p) => p.category === category) : products;
+
+  const filtered = base.filter((p) => {
     if (selectedSizes.length > 0 && !p.sizes.some((s) => selectedSizes.includes(s))) {
       return false;
     }
@@ -46,20 +52,19 @@ export default function ProductGrid() {
         onFeatureToggle={toggleFeature}
       />
       <div className="flex-1">
-        {/* Sort row */}
         <div className="flex justify-between items-center mb-8">
           <p className="font-sans text-sm text-text/60">
-            Showing {sorted.length} product{sorted.length !== 1 ? "s" : ""}
+            显示 {sorted.length} 件商品
           </p>
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortOption)}
             className="font-sans text-xs border border-surface rounded-sm px-3 py-1.5 bg-bg text-text focus:border-brand outline-none cursor-pointer"
           >
-            <option value="default">Best Selling</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="name-asc">Name: A–Z</option>
+            <option value="default">热销优先</option>
+            <option value="price-asc">价格从低到高</option>
+            <option value="price-desc">价格从高到低</option>
+            <option value="name-asc">名称 A–Z</option>
           </select>
         </div>
 
