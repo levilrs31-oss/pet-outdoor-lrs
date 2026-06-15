@@ -1,7 +1,7 @@
 /* lib/cart.tsx */
 "use client";
 
-import { createContext, useContext, useReducer, useState, useEffect } from "react";
+import { createContext, useContext, useReducer, useState, useEffect, useRef } from "react";
 
 export interface CartItem {
   id: string;          // `${productId}-${size}-${color}`
@@ -73,7 +73,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   });
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  const isFirstRender = useRef(true);
   useEffect(() => {
+    if (isFirstRender.current) { isFirstRender.current = false; return; }
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   }, [items]);
 
