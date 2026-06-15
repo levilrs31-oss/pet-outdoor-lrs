@@ -153,30 +153,54 @@ export default function Navbar({ barVisible = false }: NavbarProps) {
         </div>
       </header>
 
-      {/* Mobile full-screen overlay */}
+      {/* Backdrop */}
       <div
-        className={`fixed inset-0 z-40 bg-bg flex flex-col items-center justify-center gap-10 transition-all duration-300 ease-out ${
-          open
-            ? "opacity-100 pointer-events-auto translate-y-0"
-            : "opacity-0 pointer-events-none -translate-y-4"
+        onClick={() => setOpen(false)}
+        className={`fixed inset-0 z-40 bg-dark/30 transition-opacity duration-300 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      />
+
+      {/* Drawer */}
+      <div
+        className={`fixed top-0 right-0 z-50 h-full w-72 bg-bg flex flex-col transition-transform duration-300 ease-out ${
+          open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
+        {/* Drawer header */}
+        <div className="flex items-center justify-between px-6 h-16 border-b border-surface">
+          <span className="font-serif text-base font-light text-text">Menu</span>
+          <button
+            aria-label="Close menu"
             onClick={() => setOpen(false)}
-            className="font-serif text-4xl font-light text-text hover:text-action transition-colors duration-200"
+            className="text-text/50 hover:text-text transition-colors duration-200"
           >
-            {link.label}
-          </Link>
-        ))}
-        <div className="border-t border-surface w-16 mt-2" />
-        <div className="flex gap-8">
-          <button className="font-sans text-sm tracking-[0.15em] uppercase text-text/50 hover:text-text transition-colors duration-200">
+            <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+              <path d="M18 6 6 18M6 6l12 12" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Nav links */}
+        <nav className="flex flex-col px-6 py-8 gap-1">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="font-serif text-2xl font-light text-text hover:text-brand transition-colors duration-200 py-3 border-b border-surface/60 last:border-0"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Footer actions */}
+        <div className="mt-auto px-6 pb-10 flex gap-6">
+          <button className="font-sans text-xs tracking-[0.15em] uppercase text-text/50 hover:text-text transition-colors duration-200">
             Search
           </button>
-          <button className="font-sans text-sm tracking-[0.15em] uppercase text-text/50 hover:text-text transition-colors duration-200">
+          <button className="font-sans text-xs tracking-[0.15em] uppercase text-text/50 hover:text-text transition-colors duration-200">
             Cart (3)
           </button>
         </div>
