@@ -5,15 +5,15 @@ import Link from "next/link";
 import SectionEntrance from "@/components/ui/SectionEntrance";
 
 const ugcPhotos = [
-  { src: "https://images.unsplash.com/photo-1530700131180-d43d9b8cc41f?auto=format&fit=crop&w=400&h=400&q=80", alt: "Golden retriever on city walk" },
-  { src: "https://images.unsplash.com/photo-1659639237692-2442096a1f04?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog on forest path" },
-  { src: "https://images.unsplash.com/photo-1596432353865-033bbd1a9fa7?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog on beach" },
-  { src: "https://images.unsplash.com/photo-1762652847087-bf6db928a70a?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog at café" },
-  { src: "https://images.unsplash.com/photo-1772650295895-821ca9cc8bf0?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog with harness on trail" },
-  { src: "https://images.unsplash.com/photo-1763569586557-a01fe694b37d?auto=format&fit=crop&w=400&h=400&q=80", alt: "Golden retriever on forest path" },
-  { src: "https://images.unsplash.com/photo-1650860348894-df6aa1936076?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog running through water" },
-  { src: "https://images.unsplash.com/photo-1616961368535-1da6bfb14828?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog on beach at sunset" },
-  { src: "https://images.unsplash.com/photo-1539981979235-86d7f364f6eb?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dogs playing on beach" },
+  { src: "https://images.unsplash.com/photo-1530700131180-d43d9b8cc41f?auto=format&fit=crop&w=400&h=400&q=80", alt: "Golden retriever on city walk", username: "@golden_trail_co", likes: 312 },
+  { src: "https://images.unsplash.com/photo-1659639237692-2442096a1f04?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog on forest path", username: "@max_the_husky", likes: 847 },
+  { src: "https://images.unsplash.com/photo-1596432353865-033bbd1a9fa7?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog on beach", username: "@luna_beach_pup", likes: 203 },
+  { src: "https://images.unsplash.com/photo-1762652847087-bf6db928a70a?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog at café", username: "@dachshund_diaries", likes: 91 },
+  { src: "https://images.unsplash.com/photo-1772650295895-821ca9cc8bf0?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog with harness on trail", username: "@hiking_with_bear", likes: 564 },
+  { src: "https://images.unsplash.com/photo-1763569586557-a01fe694b37d?auto=format&fit=crop&w=400&h=400&q=80", alt: "Golden retriever on forest path", username: "@city_dog_nyc", likes: 128 },
+  { src: "https://images.unsplash.com/photo-1650860348894-df6aa1936076?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog running through water", username: "@border_collie_life", likes: 437 },
+  { src: "https://images.unsplash.com/photo-1616961368535-1da6bfb14828?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dog on beach at sunset", username: "@finn_explores", likes: 72 },
+  { src: "https://images.unsplash.com/photo-1539981979235-86d7f364f6eb?auto=format&fit=crop&w=400&h=400&q=80", alt: "Dogs playing on beach", username: "@pepper_and_paws", likes: 289 },
 ];
 
 export default function UGCGrid() {
@@ -44,6 +44,19 @@ export default function UGCGrid() {
                 sizes="(max-width: 768px) 33vw, 300px"
               />
               <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/20 transition-colors duration-[250ms]" />
+              <div className="absolute inset-0 flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-[250ms]">
+                <p className="font-sans text-xs font-medium text-white leading-tight">
+                  {photo.username}
+                </p>
+                <div className="flex items-center justify-between mt-0.5">
+                  <p className="font-sans text-[10px] text-white/70 tracking-wide">
+                    #wanderpaw
+                  </p>
+                  <p className="font-sans text-[10px] text-white/70">
+                    ♥ {photo.likes}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
