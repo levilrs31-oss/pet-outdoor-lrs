@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import { useCart } from "@/lib/cart";
 import ColorSwatch from "@/components/ui/ColorSwatch";
 import type { Product } from "@/lib/data";
 
@@ -14,13 +15,24 @@ export default function PurchasePanel({ product }: { product: Product }) {
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState("");
   const [added, setAdded] = useState(false);
+  const { addItem, openDrawer } = useCart();
 
   const rating = avgRating(product.reviews);
 
   const handleAddToCart = () => {
     if (!selectedSize) return;
+    addItem({
+      productId: product.id,
+      slug: product.slug,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      color: product.colors[selectedColor]?.name ?? "",
+      size: selectedSize,
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
+    openDrawer();
   };
 
   const scrollToReviews = () => {
