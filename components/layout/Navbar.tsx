@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Shop", href: "/shop" },
@@ -15,9 +16,19 @@ interface NavbarProps {
   barVisible?: boolean;
 }
 
+const HERO_ROUTES = ["/", "/about"];
+
+function useHasDarkHero() {
+  const pathname = usePathname();
+  if (HERO_ROUTES.includes(pathname)) return true;
+  if (pathname.startsWith("/shop")) return true;
+  return false;
+}
+
 export default function Navbar({ barVisible = false }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const hasDarkHero = useHasDarkHero();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -47,7 +58,7 @@ export default function Navbar({ barVisible = false }: NavbarProps) {
     <>
       <header
         className={`fixed left-0 right-0 z-50 transition-all duration-[300ms] ease-out ${top} ${
-          scrolled
+          scrolled || !hasDarkHero
             ? "bg-bg border-b border-surface shadow-[0_1px_8px_rgba(0,0,0,0.06)]"
             : "bg-transparent"
         }`}
@@ -57,7 +68,7 @@ export default function Navbar({ barVisible = false }: NavbarProps) {
           <Link
             href="/"
             className={`font-serif text-xl font-light tracking-wide transition-colors duration-[250ms] ${
-              scrolled ? "text-brand" : "text-white"
+              scrolled ? "text-brand" : hasDarkHero ? "text-white" : "text-brand"
             }`}
           >
             wanderpaw
@@ -70,7 +81,7 @@ export default function Navbar({ barVisible = false }: NavbarProps) {
                 key={link.href}
                 href={link.href}
                 className={`relative font-sans text-xs tracking-[0.15em] uppercase font-medium transition-colors duration-[200ms] group ${
-                  scrolled ? "text-text" : "text-white"
+                  scrolled ? "text-text" : hasDarkHero ? "text-white" : "text-text"
                 }`}
               >
                 {link.label}
@@ -82,7 +93,7 @@ export default function Navbar({ barVisible = false }: NavbarProps) {
           {/* Icons */}
           <div
             className={`flex items-center gap-5 transition-colors duration-[250ms] ${
-              scrolled ? "text-text" : "text-white"
+              scrolled ? "text-text" : hasDarkHero ? "text-white" : "text-text"
             }`}
           >
             {/* Search */}
