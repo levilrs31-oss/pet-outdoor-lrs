@@ -2,16 +2,19 @@
 "use client";
 
 import { useState } from "react";
+import ReviewList from "./ReviewList";
 import type { Product } from "@/lib/data";
 
-const tabs = ["Description", "How to Fit", "Materials", "Reviews"] as const;
-type Tab = (typeof tabs)[number];
+const staticTabs = ["Description", "How to Fit", "Materials"] as const;
+type StaticTab = (typeof staticTabs)[number];
+type Tab = StaticTab | "Reviews";
 
 export default function TabGroup({ product }: { product: Product }) {
   const [active, setActive] = useState<Tab>("Description");
+  const tabs: Tab[] = [...staticTabs, `Reviews` as Tab];
 
   return (
-    <div>
+    <div data-reviews-tab>
       {/* Tab bar */}
       <div className="flex border-b border-surface">
         {tabs.map((tab) => (
@@ -22,7 +25,9 @@ export default function TabGroup({ product }: { product: Product }) {
               active === tab ? "text-brand" : "text-text/50 hover:text-text"
             }`}
           >
-            {tab}
+            {tab === "Reviews"
+              ? `Reviews (${product.reviews.length})`
+              : tab}
             {active === tab && (
               <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-action" />
             )}
@@ -51,9 +56,7 @@ export default function TabGroup({ product }: { product: Product }) {
           </ul>
         )}
         {active === "Reviews" && (
-          <p className="text-text/40 italic">
-            Reviews coming soon. Be the first to review this product.
-          </p>
+          <ReviewList reviews={product.reviews} />
         )}
       </div>
     </div>
