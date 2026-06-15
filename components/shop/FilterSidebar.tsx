@@ -42,7 +42,7 @@ export default function FilterSidebar({
   onFeatureToggle,
 }: FilterSidebarProps) {
   return (
-    <aside className="w-56 shrink-0">
+    <aside>
       <FilterGroup title="Size">
         <div className="grid grid-cols-3 gap-2">
           {sizes.map((s) => (
