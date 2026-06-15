@@ -12,10 +12,10 @@ import ProductGrid from "@/components/shop/ProductGrid";
 import { getProductBySlug, products, categories } from "@/lib/data";
 
 const categoryTaglines: Record<string, string> = {
-  boots: "全地形爪部防护，适应每一种路面。",
-  harnesses: "安全、加垫，为每一次冒险而生。",
-  leashes: "每一次出行，都牢不可分。",
-  owner: "与你的狗狗装备完美搭配。",
+  boots: "All-terrain paw protection for every surface.",
+  harnesses: "Secure, padded comfort built for adventure.",
+  leashes: "Connected walks, every time.",
+  owner: "Gear that coordinates with your dog's.",
 };
 
 export default async function ProductPage({
@@ -33,7 +33,7 @@ export default async function ProductPage({
   // ── 品类列表页 ────────────────────────────────────────────────────────────
   if (category) {
     const heroSrc = `${category.image.split("?")[0]}?auto=format&fit=crop&w=1600&h=600&q=80`;
-    const tagline = categoryTaglines[slug] ?? "专为冒险而生，以爱设计。";
+    const tagline = categoryTaglines[slug] ?? "Built for adventure. Designed with your dog in mind.";
 
     return (
       <>
@@ -81,7 +81,7 @@ export default async function ProductPage({
         {/* 面包屑 */}
         <div className="max-w-7xl mx-auto px-6 py-4">
           <p className="font-sans text-xs text-text/40 tracking-wide">
-            首页 / 商店 /{" "}
+            Home / Shop /{" "}
             <span className="text-text">{product!.name}</span>
           </p>
         </div>
@@ -100,7 +100,7 @@ export default async function ProductPage({
         {/* 相关商品 */}
         <div className="max-w-7xl mx-auto px-6 py-16 border-t border-surface">
           <h2 className="font-serif text-3xl font-light text-text mb-10">
-            你可能还喜欢
+            You Might Also Like
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {related.map((p) => (

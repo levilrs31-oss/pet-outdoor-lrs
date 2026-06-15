@@ -54,17 +54,17 @@ export default function ProductGrid({ category }: ProductGridProps) {
       <div className="flex-1">
         <div className="flex justify-between items-center mb-8">
           <p className="font-sans text-sm text-text/60">
-            显示 {sorted.length} 件商品
+            Showing {sorted.length} product{sorted.length !== 1 ? "s" : ""}
           </p>
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortOption)}
             className="font-sans text-xs border border-surface rounded-sm px-3 py-1.5 bg-bg text-text focus:border-brand outline-none cursor-pointer"
           >
-            <option value="default">热销优先</option>
-            <option value="price-asc">价格从低到高</option>
-            <option value="price-desc">价格从高到低</option>
-            <option value="name-asc">名称 A–Z</option>
+            <option value="default">Best Selling</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A–Z</option>
           </select>
         </div>
 
