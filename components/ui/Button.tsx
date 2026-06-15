@@ -1,6 +1,7 @@
 /* components/ui/Button.tsx */
 
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 interface ButtonProps {
   variant?: "solid" | "outline" | "ghost";
@@ -41,7 +42,7 @@ export default function Button({
       "text-brand underline underline-offset-4 hover:text-action decoration-transparent hover:decoration-action hover:-translate-y-0.5 active:translate-y-px transition-all",
   };
 
-  const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
+  const classes = twMerge(`${base} ${sizes[size]} ${variants[variant]}`, className);
 
   if (href) {
     return (
