@@ -58,18 +58,11 @@ export default function Navbar({ barVisible = false }: NavbarProps) {
 
   return (
     <>
-      {/* Tall gradient scrim — only on hero pages before scrolling */}
-      {hasDarkHero && !scrolled && (
-        <div
-          className={`fixed left-0 right-0 z-40 h-40 bg-gradient-to-b from-black/60 to-transparent pointer-events-none transition-opacity duration-300 ${top}`}
-        />
-      )}
-
       <header
         className={`fixed left-0 right-0 z-50 transition-all duration-[300ms] ease-out ${top} ${
           scrolled || !hasDarkHero
             ? "bg-bg border-b border-surface shadow-[0_1px_8px_rgba(0,0,0,0.06)]"
-            : "bg-transparent"
+            : "bg-white/10 backdrop-blur-md border-b border-white/15"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
