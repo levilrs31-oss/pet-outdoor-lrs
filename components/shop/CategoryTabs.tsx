@@ -14,7 +14,7 @@ export default function CategoryTabs() {
   ];
 
   return (
-    <nav className="flex border-b border-surface overflow-x-auto">
+    <nav className="flex border-b border-surface overflow-x-auto scrollbar-none">
       {tabs.map((tab) => {
         const href = tab.slug ? `/shop/${tab.slug}` : "/shop";
         const isActive = tab.slug
