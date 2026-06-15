@@ -50,6 +50,7 @@ export default function ProductGrid({ category }: ProductGridProps) {
     <select
       value={sortBy}
       onChange={(e) => setSortBy(e.target.value as SortOption)}
+      aria-label="Sort products"
       className="font-sans text-xs border border-surface rounded-sm px-3 py-1.5 bg-bg text-text focus:border-brand outline-none cursor-pointer"
     >
       <option value="default">Best Selling</option>
@@ -78,6 +79,7 @@ export default function ProductGrid({ category }: ProductGridProps) {
           <div className="flex items-center justify-between mb-6 md:hidden">
             <button
               onClick={() => setDrawerOpen(true)}
+              aria-expanded={drawerOpen}
               className="flex items-center gap-2 font-sans text-xs tracking-[0.12em] uppercase border border-surface rounded-sm px-4 py-2 text-text hover:border-brand transition-colors duration-150"
             >
               Filters
@@ -116,6 +118,10 @@ export default function ProductGrid({ category }: ProductGridProps) {
 
       {/* Bottom sheet — 面板 */}
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Filters"
+        aria-hidden={!drawerOpen}
         className={`fixed inset-x-0 bottom-0 z-50 bg-bg rounded-t-2xl max-h-[75vh] flex flex-col transition-transform duration-300 ease-out ${
           drawerOpen ? "translate-y-0" : "translate-y-full"
         }`}
