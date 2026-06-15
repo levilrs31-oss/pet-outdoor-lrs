@@ -1,7 +1,7 @@
 /* components/shop/ProductGrid.tsx */
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { products, getProductsByCategory } from "@/lib/data";
 import ProductCard from "@/components/ui/ProductCard";
 import FilterSidebar from "./FilterSidebar";
@@ -17,6 +17,21 @@ export default function ProductGrid({ category }: ProductGridProps) {
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<SortOption>("default");
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // Body scroll lock
+  useEffect(() => {
+    document.body.style.overflow = drawerOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [drawerOpen]);
+
+  // Escape key to close
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setDrawerOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const toggleSize = (s: string) =>
     setSelectedSizes((prev) =>
