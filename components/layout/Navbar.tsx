@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useCart } from "@/lib/cart";
 
 const navLinks = [
   { label: "Shop", href: "/shop" },
@@ -29,6 +30,7 @@ export default function Navbar({ barVisible = false }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const hasDarkHero = useHasDarkHero();
+  const { count, openDrawer } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -128,6 +130,7 @@ export default function Navbar({ barVisible = false }: NavbarProps) {
             {/* Cart */}
             <button
               aria-label="Cart"
+              onClick={openDrawer}
               className="relative hover:-translate-y-0.5 transition-transform duration-[200ms]"
             >
               <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
@@ -135,9 +138,11 @@ export default function Navbar({ barVisible = false }: NavbarProps) {
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <path d="M16 10a4 4 0 0 1-8 0" />
               </svg>
-              <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-action text-white font-sans text-[10px] flex items-center justify-center leading-none">
-                3
-              </span>
+              {count > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-action text-white font-sans text-[10px] flex items-center justify-center leading-none">
+                  {count > 9 ? "9+" : count}
+                </span>
+              )}
             </button>
 
             {/* Hamburger (mobile only) */}
@@ -207,8 +212,11 @@ export default function Navbar({ barVisible = false }: NavbarProps) {
           <button className="font-sans text-xs tracking-[0.15em] uppercase text-text/50 hover:text-text transition-colors duration-200">
             Search
           </button>
-          <button className="font-sans text-xs tracking-[0.15em] uppercase text-text/50 hover:text-text transition-colors duration-200">
-            Cart (3)
+          <button
+            onClick={() => { setOpen(false); openDrawer(); }}
+            className="font-sans text-xs tracking-[0.15em] uppercase text-text/50 hover:text-text transition-colors duration-200"
+          >
+            Cart {count > 0 && `(${count})`}
           </button>
         </div>
       </div>
