@@ -60,7 +60,7 @@ export default function Navbar({ barVisible = false }: NavbarProps) {
         className={`fixed left-0 right-0 z-50 transition-all duration-[300ms] ease-out ${top} ${
           scrolled || !hasDarkHero
             ? "bg-bg border-b border-surface shadow-[0_1px_8px_rgba(0,0,0,0.06)]"
-            : "bg-transparent"
+            : "bg-gradient-to-b from-dark/50 to-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
