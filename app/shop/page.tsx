@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Footer from "@/components/layout/Footer";
 import ProductGrid from "@/components/shop/ProductGrid";
+import CategoryTabs from "@/components/shop/CategoryTabs";
 
 export default function ShopPage() {
   return (
@@ -21,17 +22,18 @@ export default function ShopPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent" />
           <div className="relative z-10 px-8 md:px-16 pb-10">
             <h1 className="font-serif text-5xl font-light text-white">Shop All</h1>
+            <p className="font-sans text-sm text-white/70 mt-2">
+              Protection, style, and comfort — for every terrain
+            </p>
           </div>
         </div>
 
-        {/* Products */}
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="flex justify-between items-center mb-8">
-            <p className="font-sans text-sm text-text/60">
-              Showing all products
-            </p>
+        {/* Category tabs + products */}
+        <div className="max-w-7xl mx-auto px-6 pt-8">
+          <CategoryTabs />
+          <div className="py-8">
+            <ProductGrid />
           </div>
-          <ProductGrid />
         </div>
       </main>
       <Footer />
