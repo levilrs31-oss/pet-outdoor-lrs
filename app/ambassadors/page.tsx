@@ -8,50 +8,50 @@ import Button from "@/components/ui/Button";
 const ambassadors = [
   {
     name: "Maya Chen",
-    location: "美国波特兰",
-    dog: "Mochi — 金毛寻回犬",
-    bio: "越野跑者与周末背包客。Maya 和 Mochi 今年已在太平洋西北地区积累了超过 400 英里的越野里程。",
-    specialty: "越野徒步",
+    location: "Portland, OR",
+    dog: "Mochi — Golden Retriever",
+    bio: "Trail runner and weekend backpacker. Maya and Mochi have logged over 400 miles across the Pacific Northwest this year alone.",
+    specialty: "Trail & Backpacking",
     img: "https://images.unsplash.com/photo-1530700131180-d43d9b8cc41f?auto=format&fit=crop&w=600&h=700&q=80",
   },
   {
     name: "Diego Flores",
-    location: "美国奥斯汀",
-    dog: "Luna — 比利时马林诺斯",
-    bio: "前军犬训练员，现职犬只驯养师。Diego 在向客户推荐任何产品前，都会将其测试到极限。",
-    specialty: "城市训练",
+    location: "Austin, TX",
+    dog: "Luna — Belgian Malinois",
+    bio: "Former military dog handler, now a professional trainer. Diego pushes every product to its limits before recommending it to his clients.",
+    specialty: "Urban Training",
     img: "https://images.unsplash.com/photo-1596432353865-033bbd1a9fa7?auto=format&fit=crop&w=600&h=700&q=80",
   },
   {
     name: "Priya Nair",
-    location: "美国布鲁克林",
-    dog: "Bear — 标准贵宾犬",
-    bio: "内容创作者与城市犬生活倡导者。Priya 证明了好装备在石板路上同样表现出色。",
-    specialty: "城市生活",
+    location: "Brooklyn, NY",
+    dog: "Bear — Standard Poodle",
+    bio: "Content creator and city dog life advocate. Priya proves that great gear performs just as well on cobblestones as it does on trails.",
+    specialty: "City Living",
     img: "https://images.unsplash.com/photo-1569992274375-e56b14e234f1?auto=format&fit=crop&w=600&h=700&q=80",
   },
   {
     name: "Jake Torrance",
-    location: "美国丹佛",
-    dog: "Atlas — 西伯利亚哈士奇",
-    bio: "滑雪巡逻员与登山运动员。Jake 在大多数犬只永远不会遭遇的极端条件下测试装备，并如实反馈。",
-    specialty: "高山与冬季",
+    location: "Denver, CO",
+    dog: "Atlas — Siberian Husky",
+    bio: "Ski patroller and mountaineer. Jake tests gear in conditions most dogs will never see — and reports back honestly.",
+    specialty: "Alpine & Winter",
     img: "https://images.unsplash.com/photo-1659639237692-2442096a1f04?auto=format&fit=crop&w=600&h=700&q=80",
   },
   {
     name: "Sofia Martens",
-    location: "美国芝加哥",
-    dog: "Pepper — 边境牧羊犬",
-    bio: "竞技敏捷训练师。Sofia 对合身度和功能性的要求无人能及——不能在时速 32km 下稳定发挥的产品，她不会推荐。",
-    specialty: "运动敏捷",
+    location: "Chicago, IL",
+    dog: "Pepper — Border Collie",
+    bio: "Competitive agility trainer. Sofia's standards for fit and function are unmatched — if it can't keep up at 20 mph, she won't recommend it.",
+    specialty: "Sport & Agility",
     img: "https://images.unsplash.com/photo-1763569673263-cbce1f0598f2?auto=format&fit=crop&w=600&h=700&q=80",
   },
   {
     name: "Marcus Webb",
-    location: "美国西雅图",
-    dog: "Finn — 拉布拉多寻回犬",
-    bio: "野生动物摄影师与皮划艇爱好者。Marcus 评估装备的防水性、可收纳性，以及在太平洋西北连绵阴雨中的实际表现。",
-    specialty: "水上与野外",
+    location: "Seattle, WA",
+    dog: "Finn — Labrador Retriever",
+    bio: "Wildlife photographer and kayaker. Marcus evaluates gear for water resistance, packability, and real-world performance in the Pacific Northwest rain.",
+    specialty: "Water & Wilderness",
     img: "https://images.unsplash.com/photo-1772650295895-821ca9cc8bf0?auto=format&fit=crop&w=600&h=700&q=80",
   },
 ];
@@ -60,22 +60,21 @@ export default function AmbassadorsPage() {
   return (
     <>
       <main style={{ paddingTop: "var(--header-h, 64px)" }}>
-        {/* 页头 */}
         <section className="max-w-3xl mx-auto px-6 py-20 text-center">
           <SectionEntrance>
             <p className="font-sans text-xs tracking-[0.2em] uppercase text-text/40 mb-4">
-              领队成员
+              The Pack
             </p>
             <h1 className="font-serif text-5xl md:text-6xl font-light text-text mb-6">
-              品牌大使
+              Ambassadors
             </h1>
             <p className="font-sans text-sm text-text/60 leading-relaxed">
-              我们的大使不是网红——他们是真正每天使用装备的狗主人：训练师、越野跑者、城市遛狗人。他们测试一切，对我们说实话。
+              Our ambassadors aren't influencers — they're real dog owners who use our gear every day: trainers, trail runners, city walkers. They test everything and tell us the truth.
             </p>
           </SectionEntrance>
         </section>
 
-        {/* 大使网格 */}
+        {/* Ambassador grid */}
         <section className="max-w-7xl mx-auto px-6 pb-24">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {ambassadors.map((a, i) => (
@@ -109,13 +108,13 @@ export default function AmbassadorsPage() {
         <section className="bg-surface py-20 px-6 text-center">
           <SectionEntrance>
             <h2 className="font-serif text-4xl font-light text-text mb-4">
-              想加入我们？
+              Want to Join the Pack?
             </h2>
             <p className="font-sans text-sm text-text/60 mb-8 max-w-md mx-auto">
-              我们寻找真正热爱狗狗的人，而不是粉丝数量。告诉我们你的狗和你们的日常。
+              We look for genuine dog people, not follower counts. Tell us about your dog and your daily adventures.
             </p>
             <Button variant="solid" size="lg" href="/contact">
-              立即申请
+              Apply Now
             </Button>
           </SectionEntrance>
         </section>

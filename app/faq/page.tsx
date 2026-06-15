@@ -7,36 +7,36 @@ import Button from "@/components/ui/Button";
 
 const faqs = [
   {
-    q: "如何确认我的狗狗适合哪个靴子尺码？",
-    a: "将狗狗的爪子放在纸上，轻轻向下按压使其展平（模拟承重状态），描出轮廓。量取最宽处为爪宽，最长处为爪长，取较大值对照尺码表。拿不准时选大一码——稍大的靴子比过紧的更不容易甩落。",
+    q: "How do I find the right boot size for my dog?",
+    a: "Place your dog's paw flat on a piece of paper and press down gently to splay the toes (mimicking weight-bearing). Trace the outline, then measure the widest point for width and the longest point for length. Use whichever is larger to find your size. When in doubt, size up — a slightly larger boot is less likely to come off than one that's too tight.",
   },
   {
-    q: "狗狗总是甩掉靴子，是我操作有误吗？",
-    a: "最常见的原因是尺码偏大。请重新测量并对照尺码表。同时检查旋转扣是否收紧到位——应该贴合而不夹紧。许多狗狗还需要每天 5–10 分钟的适应期，再逐步过渡到完整散步。",
+    q: "My dog keeps shaking off the boots. Am I doing something wrong?",
+    a: "The most common cause is sizing too large. Re-measure and double-check the chart. Also make sure the rotary buckle closure is tightened all the way — it should feel snug, not cutting off circulation. Most dogs also need a 5–10 minute indoor adjustment period each day before graduating to full walks.",
   },
   {
-    q: "胸背带适合爱拉扯的狗狗吗？",
-    a: "适合。Trail Harness 配备前后两个挂绳点。前扣可将拉力方向引向你，是训练松绳行走最有效的方式；后扣适合已经走得很好的狗狗。如果你的狗狗爱拉扯，建议从前扣开始。",
+    q: "Is the harness suitable for a dog that pulls?",
+    a: "Yes. The Trail Harness has both front and back clip attachment points. The front clip redirects pulling force toward you, making it the most effective tool for training loose-leash walking. The back clip is for dogs that already walk nicely. If your dog pulls, start with the front clip.",
   },
   {
-    q: "皮质牵引绳如何清洁和保养？",
-    a: "泥泞散步后用湿布擦拭，在远离直射热源的地方自然晾干。每 2–3 个月（或高强度使用后），薄涂一层皮革护理膏——推荐 Leather Honey 或 Otter Wax。避免将牵引绳完全浸入水中，以免皮革干裂、五金件变硬。",
+    q: "How do I clean and condition a leather leash?",
+    a: "Wipe off mud after walks with a damp cloth and let it dry away from direct heat. Every 2–3 months (or after heavy use), apply a thin coat of leather conditioner — we recommend Leather Honey or Otter Wax. Avoid submerging the leash fully in water, which can dry out the leather and stiffen the hardware.",
   },
   {
-    q: "你们的退货政策是什么？",
-    a: "购买后 30 天内免费退货，无需说明理由。商品须未穿用并保留原包装。发起退货请发邮件至 returns@wanderpaw.com，附上订单号，我们将在一个工作日内发送预付运费退货标签。",
+    q: "What is your return policy?",
+    a: "We offer free returns within 30 days of purchase, no questions asked. Items must be unworn and in original packaging. To start a return, email returns@wanderpaw.com with your order number and we'll send a prepaid return label within one business day.",
   },
   {
-    q: "配送需要多长时间？",
-    a: "标准配送 5–7 个工作日；加急配送 2–3 个工作日；次日达也可在结账时选择。工作日下午 2 点（太平洋时间）前提交的订单当天发出。订单满 $75 享免费标准配送。",
+    q: "How long does shipping take?",
+    a: "Standard shipping takes 5–7 business days. Expedited (2–3 days) and overnight options are available at checkout. Orders placed before 2pm PT on business days ship the same day. Free standard shipping on orders over $75.",
   },
   {
-    q: "你们支持国际配送吗？",
-    a: "目前配送至美国、加拿大和英国。国际订单可能涉及关税，由收件人承担。国际配送时效因目的地而异，通常为 7–14 个工作日。",
+    q: "Do you ship internationally?",
+    a: "We currently ship to the US, Canada, and UK. International orders may be subject to duties and taxes, which are the responsibility of the recipient. International delivery times vary by destination — typically 7–14 business days.",
   },
   {
-    q: "可以修改或取消订单吗？",
-    a: "我们处理订单速度很快，修改需在下单后 1 小时内提出。请立即发邮件至 hello@wanderpaw.com，附上订单号和需要的变更内容。订单发出后无法修改，但你可以在收货后发起退货。",
+    q: "Can I modify or cancel my order?",
+    a: "We process orders quickly, so changes must be requested within 1 hour of placing the order. Email hello@wanderpaw.com immediately with your order number and the change you need. Once an order has shipped, it can't be modified — but you can return it after delivery.",
   },
 ];
 
@@ -47,9 +47,9 @@ export default function FaqPage() {
     <>
       <main style={{ paddingTop: "var(--header-h, 64px)" }}>
         <div className="max-w-3xl mx-auto px-6 py-16">
-          <h1 className="font-serif text-5xl font-light text-text mb-4">常见问题</h1>
+          <h1 className="font-serif text-5xl font-light text-text mb-4">FAQ</h1>
           <p className="font-sans text-sm text-text/60 leading-relaxed mb-14">
-            常见疑问，诚实解答。
+            Common questions, honest answers.
           </p>
 
           <div className="divide-y divide-surface">
@@ -82,9 +82,9 @@ export default function FaqPage() {
 
           <div className="mt-16 pt-12 border-t border-surface text-center">
             <p className="font-sans text-sm text-text/60 mb-6">
-              没有找到答案？
+              Didn't find your answer?
             </p>
-            <Button variant="outline" href="/contact">联系我们</Button>
+            <Button variant="outline" href="/contact">Contact Us</Button>
           </div>
         </div>
       </main>

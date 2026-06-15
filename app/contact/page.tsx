@@ -24,16 +24,16 @@ export default function ContactPage() {
     <>
       <main style={{ paddingTop: "var(--header-h, 64px)" }}>
         <div className="max-w-2xl mx-auto px-6 py-16">
-          <h1 className="font-serif text-5xl font-light text-text mb-4">联系我们</h1>
+          <h1 className="font-serif text-5xl font-light text-text mb-4">Contact Us</h1>
           <p className="font-sans text-sm text-text/60 leading-relaxed mb-12">
-            我们会认真阅读每一封来信，通常在一个工作日内回复。
+            We read every message and usually reply within one business day.
           </p>
 
           {submitted ? (
             <div className="bg-surface rounded-lg p-10 text-center">
-              <p className="font-serif text-3xl font-light text-text mb-3">消息已收到。</p>
+              <p className="font-serif text-3xl font-light text-text mb-3">Message received.</p>
               <p className="font-sans text-sm text-text/60">
-                我们会在一个工作日内回复至 <strong className="text-text">{form.email}</strong>。
+                We'll get back to you at <strong className="text-text">{form.email}</strong> within one business day.
               </p>
             </div>
           ) : (
@@ -41,7 +41,7 @@ export default function ContactPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label className="font-sans text-xs tracking-[0.1em] uppercase text-text/50 mb-2 block">
-                    姓名
+                    Name
                   </label>
                   <input
                     required
@@ -49,13 +49,13 @@ export default function ContactPage() {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="你的姓名"
+                    placeholder="Your name"
                     className={inputClass}
                   />
                 </div>
                 <div>
                   <label className="font-sans text-xs tracking-[0.1em] uppercase text-text/50 mb-2 block">
-                    邮箱
+                    Email
                   </label>
                   <input
                     required
@@ -71,7 +71,7 @@ export default function ContactPage() {
 
               <div>
                 <label className="font-sans text-xs tracking-[0.1em] uppercase text-text/50 mb-2 block">
-                  主题
+                  Subject
                 </label>
                 <select
                   name="subject"
@@ -79,25 +79,25 @@ export default function ContactPage() {
                   onChange={handleChange}
                   className={inputClass}
                 >
-                  <option value="">请选择话题…</option>
-                  <option value="order">订单与配送</option>
-                  <option value="returns">退货与换货</option>
-                  <option value="sizing">尺码咨询</option>
-                  <option value="ambassadors">品牌大使申请</option>
-                  <option value="other">其他</option>
+                  <option value="">Select a topic…</option>
+                  <option value="order">Order & Shipping</option>
+                  <option value="returns">Returns & Exchanges</option>
+                  <option value="sizing">Sizing Help</option>
+                  <option value="ambassadors">Ambassador Application</option>
+                  <option value="other">Other</option>
                 </select>
               </div>
 
               <div>
                 <label className="font-sans text-xs tracking-[0.1em] uppercase text-text/50 mb-2 block">
-                  留言
+                  Message
                 </label>
                 <textarea
                   required
                   name="message"
                   value={form.message}
                   onChange={handleChange}
-                  placeholder="请告诉我们如何帮助你…"
+                  placeholder="Tell us how we can help…"
                   rows={6}
                   className={inputClass}
                 />
@@ -107,20 +107,19 @@ export default function ContactPage() {
                 type="submit"
                 className="font-sans text-sm tracking-[0.1em] uppercase bg-brand text-white px-8 py-3 rounded-sm hover:bg-brand/90 transition-colors duration-200"
               >
-                发送消息
+                Send Message
               </button>
             </form>
           )}
 
-          {/* 其他联系方式 */}
           <div className="mt-16 pt-12 border-t border-surface grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <p className="font-sans text-xs tracking-[0.15em] uppercase text-text/40 mb-2">邮件</p>
+              <p className="font-sans text-xs tracking-[0.15em] uppercase text-text/40 mb-2">Email</p>
               <p className="font-sans text-sm text-text">hello@wanderpaw.com</p>
             </div>
             <div>
-              <p className="font-sans text-xs tracking-[0.15em] uppercase text-text/40 mb-2">工作时间</p>
-              <p className="font-sans text-sm text-text">周一至周五，上午 9 点–下午 5 点（太平洋时间）</p>
+              <p className="font-sans text-xs tracking-[0.15em] uppercase text-text/40 mb-2">Hours</p>
+              <p className="font-sans text-sm text-text">Monday–Friday, 9am–5pm PT</p>
             </div>
           </div>
         </div>

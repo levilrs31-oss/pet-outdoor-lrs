@@ -8,62 +8,62 @@ import SectionEntrance from "@/components/ui/SectionEntrance";
 const stories = [
   {
     slug: "trail-tested-rotary-boots",
-    category: "装备评测",
-    title: "30 英里实测：Rotary Buckle 靴子",
-    excerpt: "我们带着这双靴子穿越沙漠酷热、溪流与碎石山路。以下是它经受住的考验——以及让我们意外的地方。",
+    category: "Gear Review",
+    title: "30 Miles in the Rotary Buckle Boots",
+    excerpt: "We took these boots through desert heat, creek crossings, and scree fields. Here's what held up — and what surprised us.",
     author: "Jamie Ruiz",
-    date: "2026年6月10日",
-    readTime: "5 分钟",
+    date: "June 10, 2026",
+    readTime: "5 min",
     img: "https://images.unsplash.com/photo-1547919307-39751fd99411?auto=format&fit=crop&w=800&h=500&q=80",
   },
   {
     slug: "reactive-dog-harness-guide",
-    category: "训练",
-    title: "应激犬的最佳胸背带方案",
-    excerpt: "前扣、后扣还是双扣？一位训练师与一条「改邪归正」的拉扯犬，共同评测什么方案真正有效。",
+    category: "Training",
+    title: "The Best Harness Setup for Reactive Dogs",
+    excerpt: "Front clip, back clip, or dual clip? A trainer and a reformed puller weigh in on what actually works.",
     author: "Sarah M.",
-    date: "2026年5月28日",
-    readTime: "7 分钟",
+    date: "May 28, 2026",
+    readTime: "7 min",
     img: "https://images.unsplash.com/photo-1772650295895-821ca9cc8bf0?auto=format&fit=crop&w=800&h=500&q=80",
   },
   {
     slug: "city-walking-gear-guide",
-    category: "生活方式",
-    title: "城市狗主人的装备指南",
-    excerpt: "滚烫的人行道、拥挤的街道、露天咖啡馆。一份让城市遛狗更轻松的完整清单。",
+    category: "Lifestyle",
+    title: "The City Dog Owner's Gear Guide",
+    excerpt: "Hot pavement, crowded sidewalks, café patios. A complete checklist for making urban walks easier on both of you.",
     author: "Lena Park",
-    date: "2026年5月15日",
-    readTime: "4 分钟",
+    date: "May 15, 2026",
+    readTime: "4 min",
     img: "https://images.unsplash.com/photo-1569992274375-e56b14e234f1?auto=format&fit=crop&w=800&h=500&q=80",
   },
   {
     slug: "leather-leash-care",
-    category: "保养指南",
-    title: "如何磨合（并保养）一条皮质牵引绳",
-    excerpt: "全粒面皮革越用越好看——但前提是护理得当。我们的三步保养流程，详解如下。",
+    category: "Care Guide",
+    title: "How to Break In (and Care For) a Leather Leash",
+    excerpt: "Full-grain leather gets better with use — but only if you treat it right. Our three-step care routine, explained.",
     author: "Oliver K.",
-    date: "2026年4月30日",
-    readTime: "3 分钟",
+    date: "April 30, 2026",
+    readTime: "3 min",
     img: "https://images.unsplash.com/photo-1612104925465-050a39e553f2?auto=format&fit=crop&w=800&h=500&q=80",
   },
   {
     slug: "pack-community-spotlight",
-    category: "社区",
-    title: "#wanderpaw 月度精选：五月版",
-    excerpt: "每个月我们都会聚焦那些让社区与众不同的狗狗和主人。五月主题：山地犬。",
-    author: "Wanderpaw 团队",
-    date: "2026年4月18日",
-    readTime: "3 分钟",
+    category: "Community",
+    title: "#wanderpaw Monthly Spotlight: May Edition",
+    excerpt: "Every month we highlight the dogs and owners who make this community what it is. May theme: mountain dogs.",
+    author: "The Wanderpaw Team",
+    date: "April 18, 2026",
+    readTime: "3 min",
     img: "https://images.unsplash.com/photo-1530700131180-d43d9b8cc41f?auto=format&fit=crop&w=800&h=500&q=80",
   },
   {
     slug: "sizing-boots-guide",
-    category: "购买指南",
-    title: "如何精准测量狗靴尺寸",
-    excerpt: "量两次，下一次单。适合各种爪型的分步测量指南，从此告别尺码猜谜。",
+    category: "Buying Guide",
+    title: "How to Measure Your Dog's Paws for Boots",
+    excerpt: "Measure twice, order once. A step-by-step sizing guide for every paw shape — no more guessing.",
     author: "Priya K.",
-    date: "2026年4月5日",
-    readTime: "4 分钟",
+    date: "April 5, 2026",
+    readTime: "4 min",
     img: "https://images.unsplash.com/photo-1596432353865-033bbd1a9fa7?auto=format&fit=crop&w=800&h=500&q=80",
   },
 ];
@@ -72,19 +72,18 @@ export default function StoriesPage() {
   return (
     <>
       <main style={{ paddingTop: "var(--header-h, 64px)" }}>
-        {/* 页头 */}
         <section className="max-w-7xl mx-auto px-6 py-16">
           <SectionEntrance>
             <p className="font-sans text-xs tracking-[0.2em] uppercase text-text/40 mb-3">
-              Wanderpaw 日志
+              Wanderpaw Journal
             </p>
             <h1 className="font-serif text-5xl md:text-6xl font-light text-text">
-              故事
+              Stories
             </h1>
           </SectionEntrance>
         </section>
 
-        {/* 精选故事 */}
+        {/* Featured story */}
         <section className="max-w-7xl mx-auto px-6 mb-16">
           <SectionEntrance>
             <Link href={`/stories/${stories[0].slug}`} className="group block">
@@ -109,7 +108,7 @@ export default function StoriesPage() {
                     {stories[0].excerpt}
                   </p>
                   <p className="font-sans text-xs text-text/40">
-                    {stories[0].author} · {stories[0].date} · {stories[0].readTime}阅读
+                    {stories[0].author} · {stories[0].date} · {stories[0].readTime} read
                   </p>
                 </div>
               </div>
@@ -117,7 +116,7 @@ export default function StoriesPage() {
           </SectionEntrance>
         </section>
 
-        {/* 故事网格 */}
+        {/* Story grid */}
         <section className="max-w-7xl mx-auto px-6 pb-24">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stories.slice(1).map((story, i) => (
@@ -142,7 +141,7 @@ export default function StoriesPage() {
                     {story.excerpt}
                   </p>
                   <p className="font-sans text-xs text-text/40">
-                    {story.author} · {story.readTime}阅读
+                    {story.author} · {story.readTime} read
                   </p>
                 </Link>
               </SectionEntrance>
