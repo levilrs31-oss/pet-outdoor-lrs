@@ -2,6 +2,14 @@
 
 import Button from "@/components/ui/Button";
 import Image from "next/image";
+import Link from "next/link";
+
+const quickLinks = [
+  { label: "Boots", href: "/shop/boots" },
+  { label: "Harnesses", href: "/shop/harnesses" },
+  { label: "Leashes", href: "/shop/leashes" },
+  { label: "Accessories", href: "/shop/owner" },
+];
 
 export default function HeroSection() {
   return (
@@ -17,8 +25,8 @@ export default function HeroSection() {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/10 to-transparent" />
 
-      {/* Content */}
-      <div className="relative z-10 px-8 md:px-16 pb-20 md:pb-24 max-w-xl">
+      {/* Main content */}
+      <div className="relative z-10 px-8 md:px-16 pb-24 md:pb-28 max-w-xl">
         <p className="font-sans text-xs tracking-[0.2em] uppercase text-white/70 mb-4">
           New — Rotary Buckle Collection
         </p>
@@ -27,9 +35,37 @@ export default function HeroSection() {
           <br />
           beautifully equipped.
         </h1>
-        <Button variant="outline" size="lg" href="/shop/boots">
-          Shop Boots
-        </Button>
+        <div className="flex items-center gap-6">
+          <Button variant="outline" size="lg" href="/shop/boots">
+            Shop Boots
+          </Button>
+          <Link
+            href="/shop"
+            className="font-sans text-sm text-white/80 hover:text-white border-b border-white/40 hover:border-white transition-colors duration-200 pb-0.5"
+          >
+            Explore All Gear →
+          </Link>
+        </div>
+      </div>
+
+      {/* Scene quick links — desktop only */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-dark/50 backdrop-blur-sm hidden md:flex z-10">
+        {quickLinks.map((link, i) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`flex-1 flex flex-col items-center justify-center gap-0.5 hover:bg-white/10 transition-colors duration-200 ${
+              i < quickLinks.length - 1 ? "border-r border-white/15" : ""
+            }`}
+          >
+            <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-white/50">
+              Category
+            </span>
+            <span className="font-serif text-base font-light text-white">
+              {link.label}
+            </span>
+          </Link>
+        ))}
       </div>
     </section>
   );
