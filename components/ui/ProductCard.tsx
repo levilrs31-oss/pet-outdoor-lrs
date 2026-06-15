@@ -11,6 +11,11 @@ export default function ProductCard({ product }: { product: Product }) {
   const [hovered, setHovered] = useState(false);
   const [selectedColor, setSelectedColor] = useState(0);
 
+  const avgRating =
+    product.reviews?.length
+      ? product.reviews.reduce((s, r) => s + r.rating, 0) / product.reviews.length
+      : null;
+
   return (
     <Link
       href={`/shop/${product.slug}`}
@@ -50,6 +55,13 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
         <p className="font-sans text-sm font-medium text-text leading-snug">{product.name}</p>
         <p className="font-sans text-xs text-text/60 mt-0.5">{product.subtitle}</p>
+        {avgRating !== null && (
+          <p className="font-sans text-xs text-text/50 mt-0.5">
+            <span className="text-action">★</span>{" "}
+            {avgRating.toFixed(1)}
+            <span className="text-text/30 ml-1">({product.reviews.length})</span>
+          </p>
+        )}
         <p className="font-sans text-sm text-action font-medium mt-1.5">
           ${product.price}
           {product.priceMax && ` – $${product.priceMax}`}
