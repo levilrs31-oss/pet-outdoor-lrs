@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { products } from "@/lib/data";
+import { products, getProductsByCategory } from "@/lib/data";
 import ProductCard from "@/components/ui/ProductCard";
 import FilterSidebar from "./FilterSidebar";
 
@@ -27,7 +27,7 @@ export default function ProductGrid({ category }: ProductGridProps) {
       prev.includes(f) ? prev.filter((x) => x !== f) : [...prev, f]
     );
 
-  const base = category ? products.filter((p) => p.category === category) : products;
+  const base = category ? getProductsByCategory(category) : products;
 
   const filtered = base.filter((p) => {
     if (selectedSizes.length > 0 && !p.sizes.some((s) => selectedSizes.includes(s))) {
