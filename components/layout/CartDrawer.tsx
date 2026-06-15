@@ -32,7 +32,7 @@ function QtyControl({ id, qty, updateQty }: {
 }
 
 export default function CartDrawer() {
-  const { items, count, subtotal, removeItem, clearCart, drawerOpen, closeDrawer } = useCart();
+  const { items, count, subtotal, removeItem, updateQty, clearCart, drawerOpen, closeDrawer } = useCart();
 
   return (
     <>
