@@ -5,8 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/lib/cart";
 
-function QtyControl({ id, qty }: { id: string; qty: number }) {
-  const { updateQty } = useCart();
+function QtyControl({ id, qty, updateQty }: {
+  id: string;
+  qty: number;
+  updateQty: (id: string, qty: number) => void;
+}) {
   return (
     <div className="flex items-center border border-surface rounded-sm">
       <button
@@ -35,6 +38,7 @@ export default function CartDrawer() {
     <>
       {/* Backdrop */}
       <div
+        aria-hidden="true"
         onClick={closeDrawer}
         className={`fixed inset-0 z-40 bg-dark/30 transition-opacity duration-300 ${
           drawerOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -43,6 +47,9 @@ export default function CartDrawer() {
 
       {/* Drawer */}
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Shopping cart"
         className={`fixed top-0 right-0 z-50 h-full w-full max-w-md bg-bg flex flex-col transition-transform duration-300 ease-out ${
           drawerOpen ? "translate-x-0" : "translate-x-full"
         }`}
@@ -110,7 +117,7 @@ export default function CartDrawer() {
                       {item.color} · {item.size}
                     </p>
                     <p className="font-sans text-sm font-medium text-text mt-auto">
-                      ${item.price}
+                      ${item.price.toFixed(2)}
                     </p>
                   </div>
 
@@ -125,7 +132,7 @@ export default function CartDrawer() {
                         <path d="M18 6 6 18M6 6l12 12" strokeLinecap="round" />
                       </svg>
                     </button>
-                    <QtyControl id={item.id} qty={item.qty} />
+                    <QtyControl id={item.id} qty={item.qty} updateQty={updateQty} />
                   </div>
                 </li>
               ))}
