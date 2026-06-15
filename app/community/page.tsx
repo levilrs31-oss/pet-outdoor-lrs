@@ -1,7 +1,6 @@
 /* app/community/page.tsx */
 
 import Image from "next/image";
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SectionEntrance from "@/components/ui/SectionEntrance";
 
@@ -39,8 +38,7 @@ const regions = ["All", "US", "UK", "Europe"];
 export default function CommunityPage() {
   return (
     <>
-      <Navbar />
-      <main className="pt-16">
+      <main style={{ paddingTop: "var(--header-h, 64px)" }}>
         {/* Hero */}
         <section className="relative h-64 md:h-80 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 grid grid-cols-3 opacity-40">

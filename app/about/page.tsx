@@ -1,7 +1,6 @@
 /* app/about/page.tsx */
 
 import Image from "next/image";
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SectionEntrance from "@/components/ui/SectionEntrance";
 import Button from "@/components/ui/Button";
@@ -29,8 +28,7 @@ const press = ["The Spruce Pets", "Apartment Therapy", "Outside Magazine", "Gear
 export default function AboutPage() {
   return (
     <>
-      <Navbar />
-      <main className="pt-16">
+      <main style={{ paddingTop: "var(--header-h, 64px)" }}>
         {/* Hero */}
         <section className="relative h-[50vh] min-h-[320px] flex items-end">
           <Image

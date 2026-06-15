@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  --header-h: 100px;
+}
+
 @theme {
   /* Colors */
   --color-bg: #FAF8F5;

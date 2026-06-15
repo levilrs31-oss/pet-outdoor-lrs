@@ -1,14 +1,12 @@
 /* app/shop/page.tsx */
 
 import Image from "next/image";
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ProductGrid from "@/components/shop/ProductGrid";
 
 export default function ShopPage() {
   return (
     <>
-      <Navbar />
       <main>
         {/* Category banner */}
         <div className="relative h-[35vh] min-h-[240px] flex items-end">

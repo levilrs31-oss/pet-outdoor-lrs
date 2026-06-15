@@ -1,7 +1,6 @@
 /* app/shop/[slug]/page.tsx */
 
 import { notFound } from "next/navigation";
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ImageGallery from "@/components/pdp/ImageGallery";
 import PurchasePanel from "@/components/pdp/PurchasePanel";
@@ -22,8 +21,7 @@ export default async function ProductPage({
 
   return (
     <>
-      <Navbar />
-      <main className="pt-16">
+      <main style={{ paddingTop: "var(--header-h, 64px)" }}>
         {/* Breadcrumb */}
         <div className="max-w-7xl mx-auto px-6 py-4">
           <p className="font-sans text-xs text-text/40 tracking-wide">
