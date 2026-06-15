@@ -29,7 +29,6 @@ export default function LayoutShell() {
   return (
     <>
       <AnnouncementBar visible={barVisible} onClose={handleClose} />
-      {/* @ts-expect-error -- barVisible added in Task 4 */}
       <Navbar barVisible={barVisible} />
     </>
   );
